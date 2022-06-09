@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1059282586617",
+    "project_id": "takehome-7e641",
+    "storage_bucket": "takehome-7e641.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059282586617:android:6b0bb842551af578d08b28",
+        "android_client_info": {
+          "package_name": "com.zarnikyaw.takehome.zarnikyawtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059282586617-o32fb8fdi94catp01k0q42o22s3pgiov.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zarnikyaw.takehome.zarnikyawtest",
+            "certificate_hash": "cbdaa4c9d5b5c76d2fa7e3323c02a6a08d026198"
+          }
+        },
+        {
+          "client_id": "1059282586617-ovska8bfqgaf67g3t1q1blo1ermdrjdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFyhyM9FHPew-LFYE5DUcy7TJWbgirnIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059282586617-ovska8bfqgaf67g3t1q1blo1ermdrjdj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
