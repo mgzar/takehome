@@ -1,9 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:zarnikyawtest/model/firebaseUser.dart';
 import 'package:zarnikyawtest/routes/app_pages.dart';
 import 'package:zarnikyawtest/utils/extension.dart';
 
@@ -15,30 +12,6 @@ class LoginController extends GetxController {
   var emailValidation = true.obs;
   var passwordValidation = true.obs;
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
-  Rx<User>? _firebaseUser;
-
-  User get user => _firebaseUser!.value;
-
-  Future<UserModel> getUser(String uid) async {
-    try {
-      DocumentSnapshot doc =
-          await _firestore.collection("users").doc(uid).get();
-      return UserModel.fromDocumentSnapshot(documentSnapshot: doc);
-    } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
-      rethrow;
-    }
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-    _firebaseUser = Rx<User?>(_firebaseAuth.currentUser) as Rx<User>?;
-  }
 
   @override
   Future<void> onInit() async {

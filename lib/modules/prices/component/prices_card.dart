@@ -29,20 +29,21 @@ class PricesCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    pricesUnit,
+                   "Unit : $pricesUnit" ,
                   ),
                 ],
               ),
+              const SizedBox(height: 2,),
               Text(
-                silver,
+               "Silver : $silver" ,
               ),
+              const SizedBox(height: 2,),
               Text(
-                gold,
+                "Gold : $gold",
               ),
+              const SizedBox(height: 2,),
               Text(
-                platinum,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+               "Platinum  :  $platinum",
               )
             ],
           ),

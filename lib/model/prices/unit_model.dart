@@ -8,10 +8,10 @@ class PricesModel extends Equatable {
   PreciousMetalModel? thousandGram;
 
   PricesModel(
-      {required this.ounce,
-      required this.gram,
-      required this.hundredGram,
-      required this.thousandGram});
+      { this.ounce,
+       this.gram,
+       this.hundredGram,
+       this.thousandGram});
 
   PricesModel.fromJson(Map<String, dynamic> json) {
     ounce =

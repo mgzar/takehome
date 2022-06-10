@@ -16,7 +16,16 @@ class Dashboard extends StatelessWidget {
     ];
     return GetBuilder<DashboardController>(
       builder: (controller) {
+        var appBarTitle = controller.tabIndex == 0 ? "Prices" : "Booking";
         return Scaffold(
+          appBar: AppBar(
+            title: Text(
+              appBarTitle,
+              style: const TextStyle(color: kPrimaryLightColor),
+            ),
+            backgroundColor: kPrimaryDark,
+          ),
+          body: controller.viewContainer[controller.tabIndex],
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: kPrimaryLightColor,
             showSelectedLabels: true,
@@ -28,7 +37,6 @@ class Dashboard extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             onTap: controller.changeTabIndex,
           ),
-          body: controller.viewContainer[controller.tabIndex],
         );
       },
     );
@@ -55,32 +63,4 @@ class MyTabItem {
   IconData icon;
 
   MyTabItem(this.title, this.icon);
-}
-
-class FabButton extends StatelessWidget {
-  final Function onPressed;
-
-  const FabButton({
-    Key? key,
-    required this.onPressed,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton.extended(
-      onPressed: () {
-        onPressed();
-      },
-      label: Row(
-        children: const [
-          Padding(
-            padding: EdgeInsets.only(right: 4.0),
-            child: Icon(Icons.add),
-          ),
-          Text("Day off")
-        ],
-      ),
-      backgroundColor: kPrimaryDark,
-    );
-  }
 }

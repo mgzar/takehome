@@ -12,7 +12,7 @@ class ApiService {
   dynamic data;
   Map<String, dynamic>? params;
   ContentType? contentType;
-  var baseUrl = "https://a69648a5-f361-43d0-a18c-5e0c6942687b.mock.pstmn.io/";
+  var baseUrl = "http://52.77.88.92:3000/";
   var dio = Dio();
 
   ApiService(this.url, {this.data, this.params});
@@ -25,7 +25,7 @@ class ApiService {
         return handler.next(request);
       }, onError: (e, handler) async {
         var dioError = await onError(e);
-        return handler.reject(dioError);
+        return dioError;
       }),
       PrettyDioLogger()
     ]);
@@ -48,7 +48,7 @@ class ApiService {
   Future<Response<dynamic>> checkStatus(RequestType requestType) {
     switch (requestType) {
       case RequestType.get:
-        return _dio().get(baseUrl + url, queryParameters: params);
+        return _dio().get( url, queryParameters: params);
       case RequestType.post:
         return _dio().post(
           baseUrl + url,
